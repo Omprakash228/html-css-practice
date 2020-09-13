@@ -1,0 +1,195 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Spartan, sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.content {
+    background-color: white;
+    padding: 50px;
+    width: 100%;
+    min-height: 700px;
+    margin: auto;
+
+    .container1 {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        min-height: 160px;
+        .review-ctr {
+            width: 40%;
+            .header {
+                color: hsl(300, 43%, 22%);
+                font-size: 30px;
+                font-weight: 800;
+            }
+            .desc {
+                font-size: 16px;
+                margin-top: 10px;
+                color: hsl(303, 10%, 53%);
+                line-height: 1.5;
+            }
+        }
+
+        .star-ctr {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .star-card {
+                min-height: 40px;
+                background: hsl(300, 24%, 96%);
+                padding: 15px 25px;
+                display: flex;
+                width: 450px;
+                border-radius: 5px;
+                margin-top: 15px;
+
+                .stars {
+                    width: 115px;
+                    margin-right: 20px;
+                }
+
+                .star-desc {
+                    color: hsl(300, 43%, 22%);
+                    font-size: 16px;
+                    font-weight: 700;
+                    width: calc(100% - 115px);
+                }
+            }
+
+            .star-card:nth-child(2) {
+                margin-left: 30px;
+            }
+            .star-card:nth-child(3) {
+                margin-left: 60px;
+            }
+        }
+
+    }
+
+    .card-container {
+        margin-top: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        color: hsl(300, 24%, 96%);
+
+        .card {
+            background: hsl(300, 43%, 22%);
+            width: 350px;
+            min-height: 250px;
+            border-radius: 10px;
+            padding: 30px;
+            .card-header {
+                display: flex;
+                align-items: center;
+                .img1 {
+                    background: url('./assets/image-colton.jpg');    
+                }
+                .img2 {
+                    background: url('./assets/image-irene.jpg');
+                }
+                .img3 {
+                    background: url('./assets/image-anne.jpg');
+                }
+                .user-img {
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 50%;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                }
+                .user-details {
+                    margin-left: 25px;
+                    .user-desc {
+                        color: hsl(333, 80%, 67%);
+                        margin-top: 10px;
+                    }
+                }
+            }
+            .card-desc {
+                margin-top: 20px;
+                font-size: 14px;
+                line-height: 1.8;
+            }
+        }
+
+        .card:nth-child(2) {
+            margin-top: 15px;
+        }
+
+        .card:nth-child(3) {
+            margin-top: 30px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 1310px) {
+    .container1 {
+        .star-ctr {
+            .star-card {
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                .star-desc {
+                    text-align: center;
+                    width: 100%!important;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1210px) {
+    .container1 {
+        .review-ctr, .star-ctr {
+            width: 100%!important;
+        }
+        .review-ctr {
+            padding: 0 50px;
+        }
+        .star-ctr {
+            margin-top: 50px;
+            align-items: center!important;
+            .star-card {
+                margin-left: 0!important;
+            }
+        }
+    }  
+    
+    .card-container {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .content {
+        padding: 50px 20px;
+        .review-ctr {
+            padding: 0;
+        }
+        .star-card {
+            width: 250px;
+        }
+
+        .card-container {
+            .card {
+                width: 250px;
+            }
+        }
+    }
+}
+
