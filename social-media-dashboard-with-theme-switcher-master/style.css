@@ -1,0 +1,112 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --bg-color: hsl(0, 0%, 100%);
+  --bg-pattern: hsl(225, 100%, 98%);
+  --card-bg: hsl(227, 47%, 96%);
+  --text-color: hsl(228, 12%, 44%);
+  --text-color-dark: hsl(230, 17%, 14%);
+}
+
+[data-theme="dark"] {
+  --bg-color: hsl(230, 17%, 14%);
+  --bg-pattern: hsl(232, 19%, 15%);
+  --card-bg: hsl(228, 28%, 20%);
+  --text-color: hsl(228, 34%, 66%);
+  --text-color-dark: hsl(0, 0%, 100%);
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(35%, var(--bg-pattern)), color-stop(0%, var(--bg-color)));
+  background: linear-gradient(to bottom, var(--bg-pattern) 35%, var(--bg-color) 0%);
+  font-family: 'Inter', sans-serif;
+}
+
+body .app-ctr {
+  width: 80%;
+  height: 100%;
+  overflow: auto;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+body .app-ctr .app-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .app-ctr .app-header .description .app-name {
+  font-size: 26px;
+  color: var(--text-color-dark);
+  font-weight: 700;
+}
+
+body .app-ctr .app-header .description .count {
+  margin-top: 5px;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+body .app-ctr .toggle-ctr {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+body .app-ctr .toggle-ctr .switch {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+  width: 40px;
+  height: 21px;
+}
+
+body .app-ctr .toggle-ctr .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+body .app-ctr .toggle-ctr .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#378fe6), to(#3eda82));
+  background: linear-gradient(to right, #378fe6, #3eda82);
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 21px;
+}
+
+body .app-ctr .toggle-ctr .switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--bg-pattern);
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+body .app-ctr .toggle-ctr .switch input:checked + .slider:before {
+  -webkit-transform: translateX(19px);
+  transform: translateX(19px);
+}
+/*# sourceMappingURL=style.css.map */
