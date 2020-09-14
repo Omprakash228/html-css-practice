@@ -16,7 +16,7 @@ body {
 
 .content {
   background-color: white;
-  padding: 50px;
+  padding: 50px 100px;
   width: 100%;
   min-height: 700px;
   margin: auto;
@@ -172,7 +172,10 @@ body {
 }
 
 @media screen and (max-width: 1310px) {
-  .container1 .star-ctr .star-card {
+  .content {
+    padding: 50px;
+  }
+  .content .container1 .star-ctr .star-card {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -182,29 +185,32 @@ body {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .container1 .star-ctr .star-card .star-desc {
+  .content .container1 .star-ctr .star-card .star-desc {
     text-align: center;
     width: 100% !important;
   }
 }
 
 @media screen and (max-width: 1210px) {
-  .container1 .review-ctr, .container1 .star-ctr {
+  .content {
+    padding: 30px;
+  }
+  .content .container1 .review-ctr, .content .container1 .star-ctr {
     width: 100% !important;
   }
-  .container1 .review-ctr {
+  .content .container1 .review-ctr {
     padding: 0 50px;
   }
-  .container1 .star-ctr {
+  .content .container1 .star-ctr {
     margin-top: 50px;
     -webkit-box-align: center !important;
         -ms-flex-align: center !important;
             align-items: center !important;
   }
-  .container1 .star-ctr .star-card {
+  .content .container1 .star-ctr .star-card {
     margin-left: 0 !important;
   }
-  .card-container {
+  .content .card-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
