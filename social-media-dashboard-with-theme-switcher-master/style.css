@@ -9,6 +9,7 @@
   --bg-color: hsl(0, 0%, 100%);
   --bg-pattern: hsl(225, 100%, 98%);
   --card-bg: hsl(227, 47%, 96%);
+  --card-bg-hover: hsl(261, 57%, 95%);
   --text-color: hsl(228, 12%, 44%);
   --text-color-dark: hsl(230, 17%, 14%);
 }
@@ -17,6 +18,7 @@
   --bg-color: hsl(230, 17%, 14%);
   --bg-pattern: hsl(232, 19%, 15%);
   --card-bg: hsl(228, 28%, 20%);
+  --card-bg-hover: hsl(228, 28%, 25%);
   --text-color: hsl(228, 34%, 66%);
   --text-color-dark: hsl(0, 0%, 100%);
 }
@@ -24,9 +26,17 @@
 body {
   height: 100vh;
   width: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(35%, var(--bg-pattern)), color-stop(0%, var(--bg-color)));
-  background: linear-gradient(to bottom, var(--bg-pattern) 35%, var(--bg-color) 0%);
-  font-family: 'Inter', sans-serif;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, var(--bg-pattern)), color-stop(0%, var(--bg-color)));
+  background: linear-gradient(to bottom, var(--bg-pattern) 30%, var(--bg-color) 0%);
+  font-family: "Inter", sans-serif;
+}
+
+body .up {
+  color: #1db489;
+}
+
+body .down {
+  color: #dc414c;
 }
 
 body .app-ctr {
@@ -58,13 +68,13 @@ body .app-ctr .app-header .description .count {
   color: var(--text-color);
 }
 
-body .app-ctr .toggle-ctr {
+body .app-ctr .app-header .toggle-ctr {
   font-size: 14px;
   font-weight: 700;
   color: var(--text-color);
 }
 
-body .app-ctr .toggle-ctr .switch {
+body .app-ctr .app-header .toggle-ctr .switch {
   position: relative;
   display: inline-block;
   margin-left: 10px;
@@ -72,13 +82,13 @@ body .app-ctr .toggle-ctr .switch {
   height: 21px;
 }
 
-body .app-ctr .toggle-ctr .switch input {
+body .app-ctr .app-header .toggle-ctr .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-body .app-ctr .toggle-ctr .switch .slider {
+body .app-ctr .app-header .toggle-ctr .switch .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -87,12 +97,12 @@ body .app-ctr .toggle-ctr .switch .slider {
   bottom: 0;
   background: -webkit-gradient(linear, left top, right top, from(#378fe6), to(#3eda82));
   background: linear-gradient(to right, #378fe6, #3eda82);
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   border-radius: 21px;
 }
 
-body .app-ctr .toggle-ctr .switch .slider:before {
+body .app-ctr .app-header .toggle-ctr .switch .slider:before {
   position: absolute;
   content: "";
   height: 15px;
@@ -100,13 +110,218 @@ body .app-ctr .toggle-ctr .switch .slider:before {
   left: 3px;
   bottom: 3px;
   background-color: var(--bg-pattern);
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   border-radius: 50%;
 }
 
-body .app-ctr .toggle-ctr .switch input:checked + .slider:before {
+body .app-ctr .app-header .toggle-ctr .switch input:checked + .slider:before {
   -webkit-transform: translateX(19px);
   transform: translateX(19px);
+}
+
+body .app-ctr .dashboard-ctr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 35px;
+}
+
+body .app-ctr .dashboard-ctr .dashboard-card {
+  height: 250px;
+  width: 23%;
+  background: var(--card-bg);
+  border-radius: 7px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+body .app-ctr .dashboard-ctr .dashboard-card .card-border-top {
+  height: 5px;
+  width: 100%;
+}
+
+body .app-ctr .dashboard-ctr .dashboard-card .account-name {
+  font-size: 14px;
+  margin-top: 35px;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+body .app-ctr .dashboard-ctr .dashboard-card .account-name:before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  display: block;
+  float: left;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+body .app-ctr .dashboard-ctr .dashboard-card .followers-count {
+  font-size: 45px;
+  margin-top: 25px;
+  font-weight: 800;
+  color: var(--text-color-dark);
+}
+
+body .app-ctr .dashboard-ctr .dashboard-card .followers {
+  font-size: 14px;
+  color: var(--text-color);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 500;
+}
+
+body .app-ctr .dashboard-ctr .dashboard-card .count-change {
+  margin-top: 40px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+body .app-ctr .dashboard-ctr .dashboard-card:hover {
+  background: var(--card-bg-hover);
+}
+
+body .app-ctr .dashboard-ctr .dashboard-card:nth-child(1) > .card-border-top {
+  background: #198ff5;
+}
+
+body .app-ctr .dashboard-ctr .dashboard-card:nth-child(2) > .card-border-top {
+  background: #1ca0f2;
+}
+
+body .app-ctr .dashboard-ctr .dashboard-card:nth-child(3) > .card-border-top {
+  background: -webkit-gradient(linear, left top, right top, from(#fdc468), to(#df4996));
+  background: linear-gradient(to right, #fdc468, #df4996);
+}
+
+body .app-ctr .dashboard-ctr .dashboard-card:nth-child(4) > .card-border-top {
+  background: #c4032a;
+}
+
+body .app-ctr .dashboard-ctr .dashboard-card:nth-child(1) > .account-name:before {
+  background-image: url("./assets/icon-facebook.svg");
+}
+
+body .app-ctr .overview-header {
+  font-size: 22px;
+  color: var(--text-color-dark);
+  font-weight: 700;
+  margin-top: 40px;
+}
+
+body .app-ctr .overview-card-ctr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+body .app-ctr .overview-card-ctr .overview-card {
+  width: 23%;
+  height: 160px;
+  background: var(--card-bg);
+  cursor: pointer;
+  margin-bottom: 30px;
+  border-radius: 7px;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .app-ctr .overview-card-ctr .overview-card .context-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .app-ctr .overview-card-ctr .overview-card .context-row .context {
+  font-size: 14px;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+body .app-ctr .overview-card-ctr .overview-card .context-row .fb-img {
+  background: url("./assets/icon-facebook.svg");
+}
+
+body .app-ctr .overview-card-ctr .overview-card .context-row .insta-img {
+  background: url("./assets/icon-instagram.svg");
+}
+
+body .app-ctr .overview-card-ctr .overview-card .context-row .twitter-img {
+  background: url("./assets/icon-twitter.svg");
+}
+
+body .app-ctr .overview-card-ctr .overview-card .context-row .youtube-img {
+  background: url("./assets/icon-youtube.svg");
+}
+
+body .app-ctr .overview-card-ctr .overview-card .context-row .app-logo {
+  height: 25px;
+  width: 25px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+body .app-ctr .overview-card-ctr .overview-card .count-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .app-ctr .overview-card-ctr .overview-card .count-row .count {
+  font-size: 32px;
+  color: var(--text-color-dark);
+  font-weight: 700;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+body .app-ctr .overview-card-ctr .overview-card .count-row .change {
+  font-size: 14px;
+  font-weight: 700;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+body .app-ctr .overview-card-ctr .overview-card:hover {
+  background: var(--card-bg-hover);
 }
 /*# sourceMappingURL=style.css.map */
