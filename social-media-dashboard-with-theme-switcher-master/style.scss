@@ -39,13 +39,14 @@ body {
   }
   .app-ctr {
     width: 80%;
-    height: 100%;
     overflow: auto;
     margin: 0 auto;
     padding: 50px 0;
     .app-header {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
+      margin: 0 1%;
       .description {
         .app-name {
           font-size: 26px;
@@ -61,6 +62,7 @@ body {
       .toggle-ctr {
         font-size: 14px;
         font-weight: 700;
+        display: flex;
         color: var(--text-color);
         .switch {
           position: relative;
@@ -111,17 +113,19 @@ body {
     }
     .dashboard-ctr {
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
       margin-top: 35px;
       .dashboard-card {
         height: 250px;
         width: 23%;
+        margin: 1%;
         background: var(--card-bg);
         border-radius: 7px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 20px;
         cursor: pointer;
         .card-border-top {
           height: 5px;
@@ -190,11 +194,10 @@ body {
       font-size: 22px;
       color: var(--text-color-dark);
       font-weight: 700;
-      margin-top: 40px;
+      margin: 40px 1% 0 1%;
     }
     .overview-card-ctr {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
       margin-top: 30px;
       .overview-card {
@@ -202,7 +205,7 @@ body {
         height: 160px;
         background: var(--card-bg);
         cursor: pointer;
-        margin-bottom: 30px;
+        margin: 1%;
         border-radius: 7px;
         padding: 30px;
         display: flex;
@@ -258,4 +261,31 @@ body {
       }
     }
   }
+}
+
+@media screen and (max-width: 1300px) {
+    .dashboard-card, .overview-card {
+        width: 31%!important;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .dashboard-card, .overview-card {
+        width: 48%!important;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .dashboard-card, .overview-card {
+        width: 98%!important;
+    }
+    .description, .toggle-ctr {
+        width: 100%!important;
+    }
+    .toggle-ctr {
+        margin-top: 15px;
+        padding-top: 15px;
+        justify-content: space-between;
+        border-top: 1px solid var(--text-color);
+    }
 }
