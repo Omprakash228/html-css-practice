@@ -1,7 +1,7 @@
 const theme = localStorage.getItem("IsDarkTheme");
 const toggle = document.getElementById("theme-switch");
 
-toggle.checked = Boolean(Number(theme));
+toggle.checked = Boolean(Number(theme)) || window.matchMedia('(prefers-color-scheme: dark)').matches;
 switchTheme();
 
 function switchTheme() {
