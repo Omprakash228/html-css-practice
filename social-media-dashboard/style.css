@@ -225,6 +225,18 @@ body .app-ctr .dashboard-ctr .dashboard-card:nth-child(1) > .account-name:before
   background-image: url("./assets/icon-facebook.svg");
 }
 
+body .app-ctr .dashboard-ctr .dashboard-card:nth-child(2) > .account-name:before {
+  background-image: url("./assets/icon-twitter.svg");
+}
+
+body .app-ctr .dashboard-ctr .dashboard-card:nth-child(3) > .account-name:before {
+  background-image: url("./assets/icon-instagram.svg");
+}
+
+body .app-ctr .dashboard-ctr .dashboard-card:nth-child(4) > .account-name:before {
+  background-image: url("./assets/icon-youtube.svg");
+}
+
 body .app-ctr .overview-header {
   font-size: 22px;
   color: var(--text-color-dark);
